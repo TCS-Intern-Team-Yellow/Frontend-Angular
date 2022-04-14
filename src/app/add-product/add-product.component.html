@@ -1,0 +1,48 @@
+<html>
+
+<head>
+    <title>Add Product</title>
+    <!-- <link rel="stylesheet" type="text/css" href="style.css"> -->
+</head>
+
+<body>
+    <div class="addProduct">
+        <form class="Registerbox" [formGroup]="productform">
+            <h1>Add Product</h1>
+            <p>Name</p>
+            <input type="text" formControlName="name" placeholder="Enter Name">
+            <p>Description</p>
+            <input type="text" formControlName="description" placeholder="Enter Description">
+            <p>Category</p>
+            <select formControlName="category" placeholder="Enter Category">
+                <option value="" disabled selected>Select Category</option>
+                <option value="Electronic">Electronic</option>
+                <option value="Home Usage">Home Usage</option>
+                <option value="Furniture">Furniture</option>
+                <option value="Clothes">Clothes</option>
+            </select>
+            <p>Sub Category</p>
+            <select formControlName="subCategory" placeholder="Enter Sub-Category">
+                <option value="" disabled selected>Select Sub-Category</option>
+                <option value="Phone">Phone</option>
+                <option value="Laptop">Laptop</option>
+                <option value="Memory Card">Memory Card</option>
+                <option value="Shirt">Shirt</option>
+                <option value="Chair">Chair</option>
+                <option value="Table">Table</option>
+                <option value="Bulb">Bulb</option>
+                <option value="Cleaner">Cleaner</option>
+            </select>
+            <p>Unit Price</p>
+            <input type="number" formControlName="unitPrice" placeholder="Enter Price">
+            <p>Available Quantity</p>
+            <input type="number" formControlName="quantity" placeholder="Enter Quantity">
+            <p>Image</p>
+            <input type="file" (change)="OnFileSelected($event)" />
+            <button (click)="Add()">Add Product</button>
+        </form>
+        </div>
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+</body>
+
+</html>
