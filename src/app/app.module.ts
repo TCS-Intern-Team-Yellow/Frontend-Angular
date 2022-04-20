@@ -11,6 +11,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { AddProductComponent } from './add-product/add-product.component';
 import { CommonModule } from '@angular/common';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
+import { CategoryProductComponent } from './category-product/category-product.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { ProductDetailComponent } from './product-detail/product-detail.componen
     AdminDashboardComponent,
     DashboardComponent,
     AddProductComponent,
-    ProductDetailComponent
+    ProductDetailComponent,
+    CategoryProductComponent
   ],
   imports: [
     BrowserModule,

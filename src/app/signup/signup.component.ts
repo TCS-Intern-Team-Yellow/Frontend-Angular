@@ -54,7 +54,6 @@ export class SignupComponent implements OnInit {
               }
           } else {
             const a=document.getElementById('alert')
-            console.log(a);
             
             if(a){
               a.style.display = "block";

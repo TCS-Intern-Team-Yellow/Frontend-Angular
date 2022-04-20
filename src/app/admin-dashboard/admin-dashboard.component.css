@@ -1,0 +1,304 @@
+*{
+    margin:0px;
+    padding:0px;
+}
+/*Header Styling*/
+#top{
+    color:#660000;
+    text-align:center;
+    font-size:50px;
+    font-family: 'Ubuntu Mono', monospace;
+}
+/* Navigation bar styling*/
+/*Navbar Functionality*/
+#navbar{
+    display:flex;
+    flex-direction: column;
+    background-color: #660000;
+    height: 14vh;
+    width: 100vw;
+    font-family: sans-serif;
+    margin-top:20px;
+    border: 2px solid black;
+}
+/*Navbar content functionality*/
+#navcontent{
+    display: flex;
+    justify-content: left;
+}
+/*Navbar content styling*/
+ul li{
+    list-style: none;
+    margin: 20px;
+    border-radius: 20px;
+	font-size: 20px;
+	font-family: sans-serif;
+	padding: 10px;
+	position: relative;
+	float: left;
+}
+ul li a{
+    padding: 1px;
+    color:white;
+    text-decoration: none;
+    border-radius:10px;
+	letter-spacing: 0.5px;
+}
+ul li a:hover{
+    background-color: #d5a6bd;
+    border-radius: 10px;
+	
+}
+.fa-solid{
+	position: relative;
+	top: 27px;
+	left: 25px;
+}
+.search-form{
+	margin-top: 0%;
+	top: -60%;
+	margin-left: 70%;
+	float: right;
+	margin-right: 75px;
+	position: relative;
+	margin-bottom: 75%;
+}
+input[type=text]{
+	padding: 10px;
+	border: none;
+	font-size: 16px;
+	font-family: sans-serif;
+}
+button{
+	float: right;
+	background: orange;
+	color: white;
+	border-radius: 0 5px 5px 0;
+	cursor: pointer;
+	padding: 10px;
+	font-family: sans-serif;
+	border: none;
+	font-size: 16px;
+	position: absolute;
+}
+/* website background image designing */
+#container1{
+	background: url(/assets/image.jpeg);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100vw;
+    height: 30vh;
+}
+#row1{
+    color: #fff;
+    font-weight:bold;
+    font-size: 3rem;
+    text-align: center;
+    margin-top: 35px;
+	font-family:segoe script;
+	top: 75%;
+}
+/*Button Styling*/
+.btn{
+    margin-top:15px;
+    border: 3px solid white;
+    border-radius:15px;
+    background-color:#E3E1DF;
+    font-size:20px;
+    font-weight: bold;
+    font-family: Ink Free;
+	color: black;
+}
+.btn:hover{
+    cursor: pointer;
+    background-color: transparent;
+}
+#top3{
+    text-align: center;
+    color: brown;
+    font-family: Sitka Text Semibold;
+	top: 100%;
+	font-size: 3rem;
+	margin-top: 20px;
+}
+#container4{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    margin: 41px;
+}  
+#row4{
+    width: 20vw;
+    height: 360px;
+    border: 2px solid black;
+    background:url(/assets/row4.webp) no-repeat center center/cover; 
+    display: flex;
+    justify-content:center;
+    align-items:flex-end;
+    border-radius: 15px;
+   font-family:Cascadia Code SemiBold;
+}
+#row5{
+    width: 20vw;
+    height: 360px;
+    border: 2px solid black;
+    background:url(/assets/row5.jpeg) no-repeat center center/cover;
+    display: flex;
+    justify-content:center;
+    align-items:flex-end;
+    border-radius: 15px;
+    font-family: Calibri;
+}
+#row6{
+    width: 20vw;
+    height: 360px;
+    border: 2px solid black;
+    background:url(/assets/row6.jpg) no-repeat center center/cover;
+    display: flex;
+    justify-content:center;
+    align-items:flex-end;
+    border-radius: 15px;
+    font-family:Cascadia Code SemiBold;
+}
+#row7{
+    width: 20vw;
+    height: 360px;
+    border: 2px solid black;
+    background:url(/assets/row7.webp) no-repeat center center/cover;
+    display: flex;
+    justify-content:center;
+    align-items:flex-end;
+    border-radius: 15px;
+    font-family:Cascadia Code SemiBold;
+}
+/*Designing the footer*/
+footer{
+    text-align: center; 
+}
+.form-shape input, .form-shape select, .form-shape textarea{
+   width: 92%;
+   padding: 0.5rem;
+ }
+/*Changing the color of placeholder*/
+::placeholder{                  
+  color:gray;
+}
+/*Making the webpage responsive using media queries*/
+@media only screen and (max-width:800px){
+    #row4{
+        width: 42vw;
+    }
+    #row5{
+        width:45vw;
+    }
+    #row6{
+        margin-top: 20px;
+        width:90vw;
+    }
+     #row7{
+        margin-top: 20px;
+        width:90vw;
+    }
+}
+@media only screen and (min-width:500px) and (max-width:600px)
+{
+    #row4{
+        width: 50vw;
+        margin: auto;
+        margin-left: 10px;
+    }
+    #row5{
+        width: 50vw;
+        margin: auto;
+        margin-top: 20px;
+        margin-left: 10px;
+    }
+    #row6{
+        width: 50vw;
+        margin: auto;
+        margin-top: 20px;
+        margin-left: 10px;
+    }
+#row7{
+        width: 50vw;
+        margin: auto;
+        margin-top: 20px;
+        margin-left: 10px;
+    }
+}
+@media only screen and (max-width:500px){
+    #row4{
+        width:50vw;
+        margin: auto;
+        margin-left: 1px;
+    }
+    #row5{
+        width:50vw;
+        margin: auto;
+        margin-top: 20px;
+        margin-left: 1px;
+    }
+    #row6{
+        width:50vw;
+        margin: auto;
+        margin-top: 20px;
+        margin-left: 1px;
+    }
+        #row7{
+        width:50vw;
+        margin: auto;
+        margin-top: 20px;
+        margin-left: 1px;
+    }
+}
+@media only screen and (min-height:1000px){
+    #navbar{
+        height:10vh;
+    }
+    #container1::before{
+        height:39vh;
+    }
+    #container1{
+        height:44vh
+    }
+}
+
+.card{
+    position: relative;
+    cursor: pointer;
+}
+.overlay
+{   
+		display: block;
+		opacity: 0;
+		position: absolute;
+		bottom: 25%;
+		right:1%;
+		width: 70px;
+}
+.overlay .fa
+{
+	cursor: pointer;
+	/* background-color: #555; */
+	color: #000;
+	/* height:20px; */
+	/* width:20px; */
+	font-size: 20px;
+	padding: 4px;
+	margin: 5%;
+	margin-bottom: 5%
+}
+.overlay .btn-secondary
+{
+	background: transparent !important;
+	border: none !important;
+	box-shadow: none;
+}
+.card:hover .overlay
+{
+	opacity: 1;
+	margin: 5%;
+	transition: 0.5s;
+	
+}
