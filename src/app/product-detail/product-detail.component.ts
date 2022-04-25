@@ -1,6 +1,6 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { SpringbootService } from 'src/services/springboot.service';
 
 @Component({
   selector: 'app-product-detail',
@@ -12,13 +12,13 @@ export class ProductDetailComponent implements OnInit {
   productId!: number;
   product:any;
   constructor(
-    private httpClient: HttpClient,
+    private springboot: SpringbootService,
     private router: Router,
   ) { }
 
   ngOnInit(): void {
     this.productId=parseInt(this.router.url.split('/').reverse()[0]);
-    this.httpClient.get('http://localhost:9000/product/detail/'+this.productId).subscribe((data)=>{
+    this.springboot.getProduct(this.productId).subscribe((data)=>{
       console.log(data);
       this.product=data;
     })

@@ -1,6 +1,6 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { SpringbootService } from 'src/services/springboot.service';
 
 @Component({
   selector: 'app-admin-dashboard',
@@ -16,12 +16,12 @@ export class AdminDashboardComponent implements OnInit {
   footwearproducts: any;
 
   constructor(
-    private httpClient: HttpClient,
+    private springboot: SpringbootService,
     private router: Router,
     ) { }
 
   ngOnInit(): void {
-    this.httpClient.get('http://localhost:9000/product/details').subscribe((data:any)=>{
+    this.springboot.getProductDetails().subscribe((data:any)=>{
       console.log(data);
       this.products=data;
       this.homeproducts=data.filter((d: { category: string; })=> d.category =='HomeAppliance').slice(0,7)
@@ -32,10 +32,14 @@ export class AdminDashboardComponent implements OnInit {
   }
 
   remove(productId:any){
-    this.httpClient.delete('http://localhost:9000/product/remove/'+productId).subscribe((data:any)=>{
+    this.springboot.removeProduct(productId).subscribe((data:any)=>{
       console.log(data);
-      this.router.navigate(['/adminDashboard'])
-      
+      if(data){
+        this.router.navigate(['/adminDashboard'])
+      }else{
+        console.log("error");
+        
+      }     
     })
   }
 

@@ -1,5 +1,5 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { SpringbootService } from 'src/services/springboot.service';
 
 
 @Component({
@@ -15,11 +15,11 @@ export class DashboardComponent implements OnInit {
   footwearproducts=[];
 
   constructor(
-    private httpClient: HttpClient,
+    private sprigboot: SpringbootService,
     ) { }
 
   ngOnInit(): void {
-    this.httpClient.get('http://localhost:9000/product/details').subscribe((data:any)=>{
+    this.sprigboot.getProductDetails().subscribe((data:any)=>{
       console.log(data);
       this.products=data;
       this.homeproducts=data.filter((d: { category: string; })=> d.category =='HomeAppliance').slice(0,7)

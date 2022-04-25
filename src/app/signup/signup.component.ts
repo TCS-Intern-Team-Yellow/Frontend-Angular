@@ -1,7 +1,7 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
+import { SpringbootService } from 'src/services/springboot.service';
 
 @Component({
   selector: 'app-signup',
@@ -14,7 +14,7 @@ export class SignupComponent implements OnInit {
 
   constructor(
     private fb: FormBuilder,
-    private httpClient: HttpClient,
+    private springboot: SpringbootService,
     private router: Router
   ) { }
 
@@ -43,7 +43,7 @@ export class SignupComponent implements OnInit {
         "password": this.loginform.value.password
     }
     console.log(data)
-    this.httpClient.post('http://localhost:8081/login/user/login', data).subscribe((response:any) =>{
+    this.springboot.login(data).subscribe((response:any) =>{
       console.log(response);
       if (response) {
           if (response.userId) {
@@ -96,7 +96,7 @@ async SignUp() {
         "password": this.registerform.value.password
     }
     console.log(data)
-    this.httpClient.post('http://localhost:8081/login/user/signup', data).subscribe((response:any)=>{
+    this.springboot.signUp(data).subscribe((response:any)=>{
       console.log(response)
       if (response) {
         if (response['userId']) {
