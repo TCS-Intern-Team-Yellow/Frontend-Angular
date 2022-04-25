@@ -1,5 +1,7 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { CookieService } from 'ngx-cookie-service';
+import { SpringbootService } from 'src/services/springboot.service';
 
 
 @Component({
@@ -15,11 +17,17 @@ export class DashboardComponent implements OnInit {
   footwearproducts=[];
 
   constructor(
-    private httpClient: HttpClient,
-    ) { }
+    private sprigboot: SpringbootService,
+    private cookieService: CookieService,
+    private router: Router
+    ) { 
+      if(this.cookieService.get('userType')=='admin'){
+        this.router.navigate(['/adminDashboard'])
+      }
+    }
 
   ngOnInit(): void {
-    this.httpClient.get('http://localhost:9000/product/details').subscribe((data:any)=>{
+    this.sprigboot.getProductDetails().subscribe((data:any)=>{
       console.log(data);
       this.products=data;
       this.homeproducts=data.filter((d: { category: string; })=> d.category =='HomeAppliance').slice(0,7)
@@ -30,4 +38,8 @@ export class DashboardComponent implements OnInit {
     })
   }
 
+  logOut(){
+    this.cookieService.deleteAll();
+    this.router.navigate(['/signup']);
+  }
 }

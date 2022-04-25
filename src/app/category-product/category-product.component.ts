@@ -1,6 +1,6 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { SpringbootService } from 'src/services/springboot.service';
 
 @Component({
   selector: 'app-category-product',
@@ -13,14 +13,14 @@ export class CategoryProductComponent implements OnInit {
   products:any;
 
   constructor(
-    private httpClient: HttpClient,
+    private springboot: SpringbootService,
     private router: Router,
     ) { 
   }
 
   ngOnInit(): void {
     this.category=this.router.url.split('/').reverse()[0];
-    this.httpClient.get('http://localhost:9000/product/details').subscribe((data:any)=>{
+    this.springboot.getProductDetails().subscribe((data:any)=>{
       console.log(data);
       console.log(this.category);
       

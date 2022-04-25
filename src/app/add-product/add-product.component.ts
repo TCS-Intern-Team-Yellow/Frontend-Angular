@@ -1,8 +1,9 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import b64toBlob from 'b64-to-blob';
+import { CookieService } from 'ngx-cookie-service';
+import { SpringbootService } from 'src/services/springboot.service';
 
 @Component({
   selector: 'app-add-product',
@@ -15,9 +16,14 @@ export class AddProductComponent implements OnInit {
 
   constructor(
     private fb: FormBuilder,
-    private httpClient: HttpClient,
+    private springboot: SpringbootService,
+    private cookieService: CookieService,
     private router: Router
-    ) { }
+    ) { 
+      if(this.cookieService.get('userType')!='admin'){
+        this.router.navigate(['/dashboard'])
+      }
+    }
 
   ngOnInit(): void {
     this.productform=this.fb.group({
@@ -43,7 +49,7 @@ export class AddProductComponent implements OnInit {
     }
     // data['imageRef'] = null;
     console.log(data)
-    this.httpClient.post('http://localhost:9000/product/addproduct',data).subscribe(response=>{
+    this.springboot.addProduct(data).subscribe(response=>{
       console.log(response);
       
       if (response) {

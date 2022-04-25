@@ -12,9 +12,4 @@ export class AppComponent {
   ){}
   title = 'shopper';
 
-  getUserData(){
-    this.httpClient.get('http://localhost:8081/login/user/userid/00f39177-b686-42a4-8eaa-8441b3a71580').subscribe((data)=>{
-      console.log(data)
-    })
-  }
 }
