@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { CookieService } from 'ngx-cookie-service';
 import { SpringbootService } from 'src/services/springboot.service';
 
 @Component({
@@ -18,7 +19,12 @@ export class AdminDashboardComponent implements OnInit {
   constructor(
     private springboot: SpringbootService,
     private router: Router,
-    ) { }
+    private cookieService: CookieService,
+    ) { 
+      if(this.cookieService.get('userType')=='user'){
+        this.router.navigate(['/dashboard'])
+      }
+   }
 
   ngOnInit(): void {
     this.springboot.getProductDetails().subscribe((data:any)=>{
@@ -29,6 +35,11 @@ export class AdminDashboardComponent implements OnInit {
       this.gadgetproducts=data.filter((d: { category: string; })=> d.category =='Gadget').slice(0,7)
       this.footwearproducts=data.filter((d: { category: string; })=> d.category =='Footwear').slice(0,7)
     })
+  }
+
+  logOut(){
+    this.cookieService.deleteAll();
+    this.router.navigate(['/signup']);
   }
 
   remove(productId:any){

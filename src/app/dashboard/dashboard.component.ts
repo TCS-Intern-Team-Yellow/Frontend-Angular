@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { CookieService } from 'ngx-cookie-service';
 import { SpringbootService } from 'src/services/springboot.service';
 
 
@@ -16,7 +18,13 @@ export class DashboardComponent implements OnInit {
 
   constructor(
     private sprigboot: SpringbootService,
-    ) { }
+    private cookieService: CookieService,
+    private router: Router
+    ) { 
+      if(this.cookieService.get('userType')=='admin'){
+        this.router.navigate(['/adminDashboard'])
+      }
+    }
 
   ngOnInit(): void {
     this.sprigboot.getProductDetails().subscribe((data:any)=>{
@@ -30,4 +38,8 @@ export class DashboardComponent implements OnInit {
     })
   }
 
+  logOut(){
+    this.cookieService.deleteAll();
+    this.router.navigate(['/signup']);
+  }
 }

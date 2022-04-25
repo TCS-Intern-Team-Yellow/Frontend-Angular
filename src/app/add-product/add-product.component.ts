@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import b64toBlob from 'b64-to-blob';
+import { CookieService } from 'ngx-cookie-service';
 import { SpringbootService } from 'src/services/springboot.service';
 
 @Component({
@@ -16,8 +17,13 @@ export class AddProductComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     private springboot: SpringbootService,
+    private cookieService: CookieService,
     private router: Router
-    ) { }
+    ) { 
+      if(this.cookieService.get('userType')!='admin'){
+        this.router.navigate(['/dashboard'])
+      }
+    }
 
   ngOnInit(): void {
     this.productform=this.fb.group({
