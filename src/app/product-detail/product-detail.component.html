@@ -3,7 +3,7 @@
         <title>Shopper</title>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-<link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+
 <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
@@ -62,16 +62,25 @@
                         <img class="carousel-cell" src="blog-3.jpg" alt="" >
                         <img class="carousel-cell" src="background.jpeg" alt="" >
                       </div> -->
-                      <div style="width: 49%;" id="productimage"><img style="max-width: 80%;" src="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone11-black-select-2019?wid=940&hei=1112&fmt=png-alpha&.v=1566956144418" alt=""></div>
+                      <div style="width: 49%;" id="productimage"><img style="max-width: 100%;max-height:80vh;" src="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone11-black-select-2019?wid=940&hei=1112&fmt=png-alpha&.v=1566956144418" alt=""></div>
                 <!-- </div> -->
             <!-- </div> -->
             <div *ngIf="product">
-                    <h1 id="productname">{{product['name']}}</h1>
-                    <p id="productcategory">{{product['category']}} ({{product['subCategory']}})</p>
-                    Price &#8377; <h3 id="productprice">{{product['unitPrice']}}</h3>
-                    <p id="productdescription">{{product['description']}}</p>
-                    Available : <h4 id="productquntity">{{product['quantity']}}</h4>
-                    <button class="btn btn-primary">Add to cart</button>
+                    <h1 id="productname">{{product.name}}</h1>
+                    <p id="productcategory">{{product.category}}-{{product.subCategory}}</p>
+                    <h3 id="productprice">Rs.{{product.unitPrice}}/-</h3>
+                    <p id="productdescription">
+								{{product.description}}
+					</p>
+                   <b size="+1">Quantity : </b><input type="number" placeholder="Quantity"><br><br>
+                   <div *ngIf="!isAdmin;else admin">
+                       <button class="btn btn-primary m-2">Add to cart</button>
+                       <button class="btn btn-primary">Buy Now</button>
+                   </div>
+                   <ng-template #admin>
+                       <button class="btn btn-danger" (click)="delete(product.productId)">Delete</button>
+                   </ng-template>
+					
             </div>
         </div>
     </body>

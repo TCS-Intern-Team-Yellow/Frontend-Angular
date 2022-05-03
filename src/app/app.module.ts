@@ -22,7 +22,7 @@ import { HeaderInterceptor } from 'src/services/header-interceptor';
     DashboardComponent,
     AddProductComponent,
     ProductDetailComponent,
-    CategoryProductComponent,
+    CategoryProductComponent
   ],
   imports: [
     BrowserModule,
