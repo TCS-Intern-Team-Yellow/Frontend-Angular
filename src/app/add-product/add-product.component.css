@@ -1,0 +1,27 @@
+body  
+{  
+    margin: 0;  
+    padding: 0;  
+    background-color:#CFE2F3;  
+    font-family: Comic Sans MS;
+	top:10%	;
+    height:100vh;
+}  
+.addProduct{   
+        width: 40%;  
+        overflow: hidden;  
+        margin: auto;  
+        /* margin: 20 0 0 35%;   */
+        padding: 5%;  
+        background: #fff2cc;  
+        border-radius: 15px ;  
+		font-size: 20px;
+          
+}  
+h1{
+	text-align: center;  
+    color: brown;
+	font-style:times new roman;
+	padding: 20px;
+	margin-top:-5%;	
+}
