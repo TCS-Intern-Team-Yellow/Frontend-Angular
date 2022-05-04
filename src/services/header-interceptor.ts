@@ -12,7 +12,7 @@ export class HeaderInterceptor implements HttpInterceptor {
 
     
         return next.handle(httpRequest.clone({
-          url: 'http://10.0.143.117'+httpRequest.url
+          url: 'http://ip-10-0-143-117.ec2.internal'+httpRequest.url
          })).pipe(catchError(error => {
           return throwError(error);
         }));
