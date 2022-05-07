@@ -3,6 +3,8 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { CookieService } from 'ngx-cookie-service';
 import { SpringbootService } from 'src/services/springboot.service';
+import * as AWS from 'aws-sdk/global';
+import * as S3 from 'aws-sdk/clients/s3';
 
 @Component({
   selector: 'app-add-product',
@@ -44,9 +46,11 @@ export class AddProductComponent implements OnInit {
         "subCategory": this.productform.value.subCategory,
         "unitPrice": this.productform.value.unitPrice,
         "quantity": this.productform.value.quantity,
-        "imageRef": this.selectedImage ? this.selectedImage : null
+        "imageRef": ''
     }
-    // data['imageRef'] = null;
+    this.savetoS3(this.selectedImage);
+    data['imageRef']='https://shopper-tcsyellow.s3.amazonaws.com/'+this.selectedImage.name
+    
     console.log(data)
     this.springboot.addProduct(data).subscribe(response=>{
       console.log(response);
@@ -59,14 +63,35 @@ export class AddProductComponent implements OnInit {
     })
 }
 
-OnFileSelected(imagefile:any) {
-  
-  const reader = new FileReader();
-  reader.readAsDataURL(imagefile.target.files[0]);
-  reader.onload = (event: any) => {
-    this.selectedImage= event.target.result;
-    console.log(this.selectedImage);
-  };
+async OnFileSelected(imagefile:any) {  
+    this.selectedImage= imagefile.target.files[0];
+}
+
+async savetoS3(file: any){
+  const contentType = file.type;
+    const bucket = new S3(
+          {
+              accessKeyId: ,
+              secretAccessKey: ,
+              region: 'us-east-1'
+          }
+      );
+      const params = {
+          Bucket: 'shopper-tcsyellow',
+          Key: file.name,
+          Body: file,
+          ACL: 'public-read',
+          ContentType: contentType
+      };
+      
+      bucket.upload(params,  function (err: any, data: any) {
+          if (err) {
+              console.log('There was an error uploading your file: ', err);
+              return false;
+          }
+          console.log('Successfully uploaded file.', data);
+          return true;
+      });
 }
 
 }

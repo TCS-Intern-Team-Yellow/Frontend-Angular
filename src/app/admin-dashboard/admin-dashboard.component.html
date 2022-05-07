@@ -104,7 +104,7 @@
             <div class="d-flex flex-row">
                 <div class="card m-2" *ngFor="let product of homeproducts" style="width: 18rem;" [routerLink]="['/product',product['productId']]">
                     <div class="Product-top">
-                        <img class="card-img-top" src="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone11-black-select-2019?wid=940&hei=1112&fmt=png-alpha&.v=1566956144418">
+                        <img class="card-img-top" src="{{product['imageRef']}}">
                         <div class="overlay">
                             <button (click)="remove(product['productId'])" class="mx-3" style="background: none;border:none">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" style="color: red;" fill="currentColor" class="bi bi-trash3-fill" viewBox="0 0 16 16">
@@ -134,7 +134,7 @@
             <div class="d-flex flex-row">
                 <div class="card m-2" *ngFor="let product of gadgetproducts" style="width: 18rem;" [routerLink]="['/product',product['productId']]">
                     <div class="Product-top">
-                        <img class="card-img-top" src="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone11-black-select-2019?wid=940&hei=1112&fmt=png-alpha&.v=1566956144418">
+                        <img class="card-img-top" src="{{product['imageRef']}}">
                         <div class="overlay">
                             <button (click)="remove(product['productId'])" class="mx-3" style="background: none;border:none">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" style="color: red;" fill="currentColor" class="bi bi-trash3-fill" viewBox="0 0 16 16">
@@ -164,7 +164,7 @@
             <div class="d-flex flex-row">
                 <div class="card m-2" *ngFor="let product of garmentsproducts" style="width: 18rem;" [routerLink]="['/product',product['productId']]">
                     <div class="Product-top">
-                        <img class="card-img-top" src="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone11-black-select-2019?wid=940&hei=1112&fmt=png-alpha&.v=1566956144418">
+                        <img class="card-img-top" src="{{product['imageRef']}}">
                         <div class="overlay">
                             <button (click)="remove(product['productId'])" class="mx-3" style="background: none;border:none">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" style="color: red;" fill="currentColor" class="bi bi-trash3-fill" viewBox="0 0 16 16">
@@ -194,7 +194,7 @@
             <div class="d-flex flex-row">
                 <div class="card m-2" *ngFor="let product of footwearproducts" style="width: 18rem;" [routerLink]="['/product',product['productId']]">
                     <div class="Product-top">
-                        <img class="card-img-top" src="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone11-black-select-2019?wid=940&hei=1112&fmt=png-alpha&.v=1566956144418">
+                        <img class="card-img-top" src="{{product['imageRef']}}">
                         <div class="overlay">
                             <button (click)="remove(product['productId'])" class="mx-3" style="background: none;border:none">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" style="color: red;" fill="currentColor" class="bi bi-trash3-fill" viewBox="0 0 16 16">

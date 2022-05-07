@@ -29,7 +29,7 @@ export class DashboardComponent implements OnInit {
   ngOnInit(): void {
     this.sprigboot.getProductDetails().subscribe((data:any)=>{
       console.log(data);
-      this.products=data;
+      this.products=data.reverse();
       this.homeproducts=data.filter((d: { category: string; })=> d.category =='HomeAppliance').slice(0,7)
       this.garmentsproducts=data.filter((d: { category: string; })=> d.category =='Garment').slice(0,7)
       this.gadgetproducts=data.filter((d: { category: string; })=> d.category =='Gadget').slice(0,7)
