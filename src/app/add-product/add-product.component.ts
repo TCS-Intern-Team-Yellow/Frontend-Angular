@@ -71,8 +71,8 @@ async savetoS3(file: any){
   const contentType = file.type;
     const bucket = new S3(
           {
-              accessKeyId: ,
-              secretAccessKey: ,
+              accessKeyId: '',
+              secretAccessKey: '',
               region: 'us-east-1'
           }
       );
