@@ -12,7 +12,7 @@ export class HeaderInterceptor implements HttpInterceptor {
 
     
         return next.handle(httpRequest.clone({
-          url: 'http://10.0.143.117'+httpRequest.url,
+          url:'http://shopper-alb-808215322.us-east-1.elb.amazonaws.com/'+httpRequest.url,
           setHeaders:{
             'Access-Control-Allow-Origin':'*',
           }
