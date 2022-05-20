@@ -69,7 +69,7 @@
             <h4><a [routerLink]="['/category','HomeAppliance']">View All</a></h4>
         </div>
         <div class="d-flex flex-row">
-            <div class="card m-2" *ngFor="let product of homeproducts" style="width: 18rem;" [routerLink]="['/product',product['productId']]">
+            <div class="card m-2" *ngFor="let product of homeproducts" style="width: 18rem;" [routerLink]="['/detailproduct',product['productId']]">
                 <div class="Product-top">
                     <img class="card-img-top" src="{{product['imageRef']}}">
                     <div class="overlay">
@@ -100,7 +100,7 @@
             <h4><a [routerLink]="['/category','Gadget']">View All</a></h4>
         </div>
         <div class="d-flex flex-row">
-            <div class="card m-2" *ngFor="let product of gadgetproducts" style="width: 18rem;" [routerLink]="['/product',product['productId']]">
+            <div class="card m-2" *ngFor="let product of gadgetproducts" style="width: 18rem;" [routerLink]="['/detailproduct',product['productId']]">
                 <div class="Product-top">
                     <img class="card-img-top" src="{{product['imageRef']}}">
                     <div class="overlay">
@@ -131,7 +131,7 @@
             <h4><a [routerLink]="['/category','Garment']">View All</a></h4>
         </div>
         <div class="d-flex flex-row">
-            <div class="card m-2" *ngFor="let product of garmentsproducts" style="width: 18rem;" [routerLink]="['/product',product['productId']]">
+            <div class="card m-2" *ngFor="let product of garmentsproducts" style="width: 18rem;" [routerLink]="['/detailproduct',product['productId']]">
                 <div class="Product-top">
                     <img class="card-img-top" src="{{product['imageRef']}}">
                     <div class="overlay">
@@ -162,7 +162,7 @@
             <h4><a [routerLink]="['/category','Footwear']">View All</a></h4>
         </div>
         <div class="d-flex flex-row">
-            <div class="card m-2" *ngFor="let product of footwearproducts" style="width: 18rem;" [routerLink]="['/product',product['productId']]">
+            <div class="card m-2" *ngFor="let product of footwearproducts" style="width: 18rem;" [routerLink]="['/detailproduct',product['productId']]">
                 <div class="Product-top">
                     <img class="card-img-top" src="{{product['imageRef']}}">
                     <div class="overlay">
