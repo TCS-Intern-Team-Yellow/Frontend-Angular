@@ -62,7 +62,7 @@
                         <img class="carousel-cell" src="blog-3.jpg" alt="" >
                         <img class="carousel-cell" src="background.jpeg" alt="" >
                       </div> -->
-                      <div style="width: 49%;" id="productimage"><img style="max-width: 100%;max-height:80vh;" src="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone11-black-select-2019?wid=940&hei=1112&fmt=png-alpha&.v=1566956144418" alt=""></div>
+                      <div *ngIf="product" style="width: 49%;" id="productimage"><img style="max-width: 100%;max-height:80vh;" class="p-4" src="{{product.imageRef}}" alt=""></div>
                 <!-- </div> -->
             <!-- </div> -->
             <div *ngIf="product">

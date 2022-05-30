@@ -48,9 +48,9 @@
     <div class="container container1">
         <h2> {{category}} </h2>
         <div class="d-flex flex-row flex-wrap justify-content-around">
-            <div class="card my-2" *ngFor="let product of products" style="width: 18rem;" [routerLink]="['/product',product['productId']]">
+            <div class="card my-2" *ngFor="let product of products" style="width: 18rem;" [routerLink]="['/detailproduct',product['productId']]">
                 <div class="Product-top">
-                    <img class="card-img-top" src="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone11-black-select-2019?wid=940&hei=1112&fmt=png-alpha&.v=1566956144418">
+                    <img class="card-img-top" src="{{product['imageRef']}}">
                     <div class="overlay">
                         <button type="button" class="btn btn-secondary" title="Quick shop"><i
                                 class="fa fa-eye"></i></button>

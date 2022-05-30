@@ -24,11 +24,11 @@
         <ul id="navcontent">
             <i class="fa-solid fa-house-chimney fa-solid-align-right" style="font-size:20px;color:white"></i>
             <li><a href="#">Home</a></li>
-            <i class="fa-solid fa-user fa-solid-align-right" style="font-size:20px;color:white"></i>
+            <!-- <i class="fa-solid fa-user fa-solid-align-right" style="font-size:20px;color:white"></i> -->
             <li><a href="#">Profile</a></li>
-            <i class="fa-solid fa-cart-plus fa-solid-align-right" style="font-size:20px;color:white"></i>
+            <!-- <i class="fa-solid fa-cart-plus fa-solid-align-right" style="font-size:20px;color:white"></i> -->
             <li><a href="#">My Orders</a></li>
-            <i class="fa-solid fa-heart fa-solid-align-right" style="font-size:20px;color:white"></i>
+            <!-- <i class="fa-solid fa-heart fa-solid-align-right" style="font-size:20px;color:white"></i> -->
             <li><a href="#">Wishlist</a></li>
         
             <li><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="white" class="bi bi-box-arrow-right" viewBox="0 0 16 16">
@@ -69,9 +69,9 @@
             <h4><a [routerLink]="['/category','HomeAppliance']">View All</a></h4>
         </div>
         <div class="d-flex flex-row">
-            <div class="card m-2" *ngFor="let product of homeproducts" style="width: 18rem;" [routerLink]="['/product',product['productId']]">
+            <div class="card m-2" *ngFor="let product of homeproducts" style="width: 18rem;" [routerLink]="['/detailproduct',product['productId']]">
                 <div class="Product-top">
-                    <img class="card-img-top" src="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone11-black-select-2019?wid=940&hei=1112&fmt=png-alpha&.v=1566956144418">
+                    <img class="card-img-top" src="{{product['imageRef']}}">
                     <div class="overlay">
                         <!-- <button type="button" class="btn btn-secondary my-5" title="Quick shop"><i
                                 class="fa fa-eye"></i></button> -->
@@ -100,9 +100,9 @@
             <h4><a [routerLink]="['/category','Gadget']">View All</a></h4>
         </div>
         <div class="d-flex flex-row">
-            <div class="card m-2" *ngFor="let product of gadgetproducts" style="width: 18rem;" [routerLink]="['/product',product['productId']]">
+            <div class="card m-2" *ngFor="let product of gadgetproducts" style="width: 18rem;" [routerLink]="['/detailproduct',product['productId']]">
                 <div class="Product-top">
-                    <img class="card-img-top" src="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone11-black-select-2019?wid=940&hei=1112&fmt=png-alpha&.v=1566956144418">
+                    <img class="card-img-top" src="{{product['imageRef']}}">
                     <div class="overlay">
                         <!-- <button type="button" class="btn btn-secondary" title="Quick shop"><i
                                 class="fa fa-eye"></i></button> -->
@@ -131,9 +131,9 @@
             <h4><a [routerLink]="['/category','Garment']">View All</a></h4>
         </div>
         <div class="d-flex flex-row">
-            <div class="card m-2" *ngFor="let product of garmentsproducts" style="width: 18rem;" [routerLink]="['/product',product['productId']]">
+            <div class="card m-2" *ngFor="let product of garmentsproducts" style="width: 18rem;" [routerLink]="['/detailproduct',product['productId']]">
                 <div class="Product-top">
-                    <img class="card-img-top" src="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone11-black-select-2019?wid=940&hei=1112&fmt=png-alpha&.v=1566956144418">
+                    <img class="card-img-top" src="{{product['imageRef']}}">
                     <div class="overlay">
                         <!-- <button type="button" class="btn btn-secondary" title="Quick shop"><i
                                 class="fa fa-eye"></i></button> -->
@@ -162,9 +162,9 @@
             <h4><a [routerLink]="['/category','Footwear']">View All</a></h4>
         </div>
         <div class="d-flex flex-row">
-            <div class="card m-2" *ngFor="let product of footwearproducts" style="width: 18rem;" [routerLink]="['/product',product['productId']]">
+            <div class="card m-2" *ngFor="let product of footwearproducts" style="width: 18rem;" [routerLink]="['/detailproduct',product['productId']]">
                 <div class="Product-top">
-                    <img class="card-img-top" src="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone11-black-select-2019?wid=940&hei=1112&fmt=png-alpha&.v=1566956144418">
+                    <img class="card-img-top" src="{{product['imageRef']}}">
                     <div class="overlay">
                         <!-- <button type="button" class="btn btn-secondary" title="Quick shop"><i
                                 class="fa fa-eye"></i></button> -->
