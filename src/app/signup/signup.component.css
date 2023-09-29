@@ -4,7 +4,7 @@
 }
 body
 {
-	background-image: url(D:\program\Internship\shopper\shopperhtml\background.jpeg);
+	background-image: url(../../assets/background.jpeg);
     height: 100vh;
 	background-size: cover;
 	background-position: center;
